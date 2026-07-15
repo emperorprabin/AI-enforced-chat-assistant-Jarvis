@@ -1,4 +1,5 @@
 **Meet Jarvis at your service.**
 
 
-Stay informed with instant news, set the mood with your top hits, and experience the power of a truly smart personal assistant.
+Experience the power of the AI powered smart personal assistant that can do any tasks at your request thrugh speech recognition in an instant.
+
