@@ -1,11 +1,18 @@
 import os
 from google import genai
+from openai import OpenAI
 
-client = genai.Client(api_key="AQ.Ab8RN6JuFuv731lf4OWvqAPKrlh-9Wsx8heHF0s4zV4vf7ptRw")
-
-response = client.models.generate_content(
-    model="gemini-2.5-flash",  # fast + free-tier friendly
-    contents="Write a one-sentence bedtime story about a unicorn."
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # required by the library, but ignored locally
 )
 
-print(response.text)
+response = client.chat.completions.create(
+    model="mistral",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant chatbot like siri or alxa. Give clear and short answers."},
+        {"role": "user", "content": "command"}
+    ]
+)
+
+print(response.choices[0].message.content)
